@@ -53,6 +53,20 @@ message("Number of precincts not matched to a ZCTA:")
 print(sum(is.na(precinct_zip_linked$ZCTA5CE10)))
 
 # -----------------------------
+# 6b. Match quality check
+# -----------------------------
+unmatched_n <- sum(is.na(precinct_zip_linked$ZCTA5CE10))
+total_n <- nrow(precinct_zip_linked)
+matched_pct <- 100 * (1 - unmatched_n / total_n)
+
+message("Match rate (% of precincts linked to a ZCTA):")
+print(round(matched_pct, 2))
+
+if (matched_pct < 95) {
+  warning("Less than 95% of precincts matched to a ZCTA. Check CRS alignment, geometry validity, or coverage differences.")
+}
+
+# -----------------------------
 # 7. Drop geometry for downstream analysis
 # -----------------------------
 precinct_zip_table <- precinct_zip_linked %>%
