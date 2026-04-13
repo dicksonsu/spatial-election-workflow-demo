@@ -20,7 +20,18 @@ In dissertation research on electoral geography, I worked with precinct shapefil
 - `scripts/01_load_geographies.R` loads sample spatial data and harmonizes projections
 - `scripts/02_link_precincts_to_zips.R` converts precinct polygons to centroid points and spatially joins them to ZIP Code Tabulation Areas (ZCTAs), creating a precinct-to-ZIP crosswalk for downstream aggregation.
 - `scripts/03_aggregate_returns.R` aggregates precinct-level returns to the ZIP level
-- `scripts/04_validate_outputs.R` compares ZIP-derived results to external benchmarks
+- `scripts/04_validate_outputs.R` validates the derived ZIP-level workflow by aggregating results back to the state level and comparing them to benchmark presidential vote shares.
+
+## How to run this project
+
+Scripts are designed to be run in sequence:
+
+1. `01_load_geographies.R`
+2. `02_link_precincts_to_zips.R`
+3. `03_aggregate_returns.R`
+4. `04_validate_outputs.R`
+
+Intermediate data is saved in the `data/derived/` folder.
 
 ## Note on data
 
