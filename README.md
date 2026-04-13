@@ -4,7 +4,7 @@ This repository demonstrates a reproducible R workflow for linking precinct-leve
 
 ## Project overview
 
-In dissertation research on electoral geography, I worked with precinct shapefiles and administrative data to analyze how voting patterns varied across local geographies. This repository provides a simplified public-facing version of that workflow.
+In dissertation research on electoral geography, I worked with precinct shapefiles and administrative data to analyze how voting patterns varied across local geographies. This repository provides a simplified public-facing version of that workflow. This type of workflow is relevant for organizations that rely on spatial and administrative data to understand patterns of use, engagement, or outcomes across geographic areas.
 
 ## What this repo demonstrates
 
