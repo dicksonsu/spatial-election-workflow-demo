@@ -33,14 +33,16 @@ target_crs <- 4269   # NAD83, common for Census geographies
 # -----------------------------
 # 4. Load sample precinct shapefile
 # -----------------------------
-# Replace the dsn/layer values below with your actual sample shapefile name
-# Example:
-#   dsn = "data/raw"
-#   layer = "pa_precincts_sample"
+# check to ensure the raw shapefile exists before reading
+shp_path <- file.path(raw_dir, "pa_precincts_sample.shp")
+
+if (!file.exists(shp_path)) {
+  stop("Sample precinct shapefile not found in data/raw/")
+}
 
 precincts <- st_read(
   dsn = raw_dir,
-  layer = "pa_precincts_sample",
+  layer = "pa_2020",
   quiet = TRUE
 )
 
