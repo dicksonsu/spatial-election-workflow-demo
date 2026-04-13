@@ -66,6 +66,8 @@ if (matched_pct < 95) {
   warning("Less than 95% of precincts matched to a ZCTA. Check CRS alignment, geometry validity, or coverage differences.")
 }
 
+message("Tip: unmatched cases may result from projection mismatch or boundary misalignment.")
+
 # -----------------------------
 # 7. Drop geometry for downstream analysis
 # -----------------------------
